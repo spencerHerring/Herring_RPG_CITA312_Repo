@@ -1,21 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class Mover : MonoBehaviour
 {
 
-    [SerializeField] Transform trarget;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
+    [SerializeField] Transform target;
+    
     // Update is called once per frame
     void Update()
     {
-        
+        GetComponent<NavMeshAgent>().destination = target.position;
     }
 }
